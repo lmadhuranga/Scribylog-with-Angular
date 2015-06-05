@@ -6503,6 +6503,18 @@ header.title .action {
   text-decoration: none;
   color: #b4b4b4;
 }
+/*control-panel*/
+.control-panel {
+  color: #b4b4b4;
+}
+.control-panel .stats .number {
+  font-size: 74px;
+  line-height: 66px;
+}
+.control-panel .stats .text {
+  font-size: 21px;
+  line-height: 66px;
+}
 @-ms-viewport {
   width: device-width;
 }
