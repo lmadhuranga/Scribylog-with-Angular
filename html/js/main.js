@@ -11,17 +11,68 @@ $(function(){
 
 
 
-// getGoalsEv
-
+// get Goals Ev
 
     $('#getGoals').on('keyup', function getGoalsEv (key) {
-    	if(key.keyCode == 13) { 
+    	if(key.keyCode == 13) {
 		   $('<li class="goal">'+this.value+'</li>').insertBefore($(this).parent());
 		   this.value = '';
 		 }
     });
 
-    $('#goalsList').on('click', function RmvGoals (argument) {
-    	// body...
-    })
+    $('#goalsList').on('click', '.goal', function RmvGoals (argument) {
+        $(this).remove();
+    });
+
+// get Tags EV
+
+    $('#getTags').on('keyup', function getGoalsEv (key) {
+    	if(key.keyCode == 13) {
+		   $('<li class="tag">'+this.value+'</li>').insertBefore($(this).parent());
+		   this.value = '';
+		 }
+    });
+
+    $('#tagList').on('click', '.tag', function RmvGoals (argument) {
+        $(this).remove();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
