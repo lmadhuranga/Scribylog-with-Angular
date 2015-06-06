@@ -90,9 +90,16 @@ input[type=checkbox]{
   border: 0;
   border-bottom: 2px solid;
   width: 100%;
+  height: 54px;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 100;
   &:focus{
     outline: none;
   }
+}
+.form-300{
+  max-width: 300px;
 }
 .today-date-time-wrap{
     #today-date-text{
@@ -201,6 +208,9 @@ header.title{
       padding-right: 15px;
       margin-top: 20px;
       line-height: 36px;
+    a{
+
+    }
   }
 }
 
@@ -272,6 +282,21 @@ header.title{
 
 .control-panel{
   color: @gray-light;
+  padding-bottom: 40px;
+
+  .center-section{
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid @gray-lighter;
+  }
+
+  .well{
+    padding-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow:none;
+    background: @gray-lighter;
+  }
 
 
   .stats{
@@ -284,4 +309,17 @@ header.title{
       line-height: 66px;
     }
   }
+}
+
+
+/*all-minutes*/
+.all-minutes{
+  .center-section{
+    border-bottom: 1px solid @gray-lighter;
+  }
+  .today-date-time-wrap{
+    margin-top: 0;
+
+  }
+
 }

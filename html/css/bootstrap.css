@@ -6371,9 +6371,16 @@ input[type=checkbox] {
   border: 0;
   border-bottom: 2px solid;
   width: 100%;
+  height: 54px;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 100;
 }
 .inputboxline:focus {
   outline: none;
+}
+.form-300 {
+  max-width: 300px;
 }
 .today-date-time-wrap #today-date-text {
   font-size: 21px;
@@ -6506,6 +6513,19 @@ header.title .action {
 /*control-panel*/
 .control-panel {
   color: #b4b4b4;
+  padding-bottom: 40px;
+}
+.control-panel .center-section {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #eeeeee;
+}
+.control-panel .well {
+  padding-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #eeeeee;
 }
 .control-panel .stats .number {
   font-size: 74px;
@@ -6514,6 +6534,13 @@ header.title .action {
 .control-panel .stats .text {
   font-size: 21px;
   line-height: 66px;
+}
+/*all-minutes*/
+.all-minutes .center-section {
+  border-bottom: 1px solid #eeeeee;
+}
+.all-minutes .today-date-time-wrap {
+  margin-top: 0;
 }
 @-ms-viewport {
   width: device-width;
