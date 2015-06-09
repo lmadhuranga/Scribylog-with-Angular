@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2015 at 08:00 PM
+-- Generation Time: Jun 09, 2015 at 05:05 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -229,19 +229,21 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `email` varchar(45) NOT NULL,
   `password` varchar(250) NOT NULL,
   `img` varchar(45) DEFAULT 'default.jpg',
+  `user_type` int(11) DEFAULT '1' COMMENT '0=admin, 1=''member'',',
   `enable` char(1) DEFAULT '1' COMMENT '1 =  Enable,\n0 =Disbale',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id`, `fname`, `lname`, `email`, `password`, `img`, `enable`, `created`, `modified`) VALUES
-(2, 'fuser1', 'luser2', 'user1@gmail.com', '47bce5c74f589f4867dbd57e9ca9f8080123456789hello', 'default.jpg', '1', NULL, NULL),
-(3, 'fuser3', 'luser3', 'user3@gmail.com', '47bce5c74f589f4867dbd57e9ca9f8080123456789hello', 'default.jpg', '1', NULL, NULL);
+INSERT INTO `tbl_user` (`id`, `fname`, `lname`, `email`, `password`, `img`, `user_type`, `enable`, `created`, `modified`) VALUES
+(2, 'fuser1', 'luser2', 'user1@gmail.com', '47bce5c74f589f4867dbd57e9ca9f8080123456789hello', 'default.jpg', 1, '1', NULL, NULL),
+(3, 'fuser3', 'luser3', 'user3@gmail.com', '47bce5c74f589f4867dbd57e9ca9f8080123456789hello', 'default.jpg', 1, '1', NULL, NULL),
+(4, 'admin_F', 'admin_L', 'admin@scribylog.com', '47bce5c74f589f4867dbd57e9ca9f8080123456789hello', 'default.jpg', 0, '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
