@@ -54,7 +54,7 @@ class User extends REST_Controller
             else
             {
                 // get all record
-                $users_list = $this->user_model->get_by(array('enable'=>'1'),'id,fname,lname,email,password,img,enable');   
+                $users_list = $this->user_model->get_by(array('enable'=>'1'),'id,fname,lname,email,img,enable');   
                 if (sizeof($users_list)>0)
                 {
                     $json_return_array['data'] = $users_list;
@@ -71,7 +71,7 @@ class User extends REST_Controller
         else
         {
             // send all record
-            $json_return_array = $this->user_model->get_by(array(),'id,fname,lname,email,password,img,enable');   
+            $json_return_array = $this->user_model->get_by(array(),'id,fname,lname,email,img,enable');   
         } 
 
         // response
