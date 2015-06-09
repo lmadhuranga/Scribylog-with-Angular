@@ -241,43 +241,7 @@ class User extends REST_Controller
     }
     /*---------------End of login_post()---------------*/
 
-
-    /**
-     * @author                          Madhuranga Senadheera
-     * Purpose of the function          Description
-     * @variable                         : type
-     * @return                             return_type 
-     */
-    public function login_get()
-    {
-        $_POST['email'] = 'user1@gmail.com';
-        $_POST['password'] = 'aaa';
-         // return araray ini
-        $json_return_array = array();
-        // load helpers 
-        $this->load->library('form_validation'); 
-        // set validation
-        $this->form_validation->set_rules($this->user_model->login_rules);
-        if ($this->form_validation->run()==false)
-        {
-            // validation error
-            $json_return_array['msg']       = 'Operation fail';
-            $json_return_array['status']    = 'error';
-            $json_return_array['statuss']    = validation_errors(); 
-            
-        }
-        else
-        {
-            $form_data = $this->post_get_as_array(array('email','password')); 
-            // user login
-            $json_return_array = $this->user_model->user_login($form_data['email'],$form_data['password']);
-        }
-    
-        $this->response($json_return_array, 200); 
-    }
-    /*---------------End of login_post()---------------*/
-
-
+ 
     /**
      * @author                          Madhuranga Senadheera
      * Purpose of the function          Description
