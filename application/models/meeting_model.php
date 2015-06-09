@@ -30,6 +30,16 @@ class  meeting_model extends MY_Model
                                 	'label'=>'Note',
                                 	'rules'=>'required|trim|xss_clean|max_length[255]'
                                 ),
+                                array(
+                                    'field'=>'title',
+                                    'label'=>'Title',
+                                    'rules'=>'trim|xss_clean|max_length[100]'
+                                ),
+                                 array(
+                                    'field'=>'sub_title',
+                                    'label'=>'Subtitle',
+                                    'rules'=>'trim|xss_clean|max_length[100]'
+                                ),
 								array(
                                 	'field'=>'date',
                                 	'label'=>'Date',
