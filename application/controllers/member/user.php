@@ -35,7 +35,7 @@ class User extends Member_Controller
     public function login()
     {
         $this->data['subview'] = 'member/user_login';
-        $this->load->view('member/_layout_main',$this->data);
+        $this->load->view('front/_layout_main',$this->data);
     }
     /*---------------End of index()---------------*/
 
