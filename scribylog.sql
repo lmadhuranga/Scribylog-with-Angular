@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2015 at 05:05 PM
+-- Generation Time: Jun 09, 2015 at 08:56 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -49,7 +49,9 @@ INSERT INTO `tbl_group` (`id`, `group_name`, `enable`, `created`, `modified`) VA
 
 CREATE TABLE IF NOT EXISTS `tbl_meeting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `note` varchar(255) NOT NULL DEFAULT 'none',
+  `title` varchar(100) DEFAULT NULL,
+  `sub_title` varchar(100) DEFAULT NULL,
+  `note` varchar(255) DEFAULT 'none',
   `date` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
   `conducted_by` int(11) NOT NULL,
@@ -58,14 +60,16 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `tbl_meeting`
 --
 
-INSERT INTO `tbl_meeting` (`id`, `note`, `date`, `end_time`, `conducted_by`, `held_status`, `enable`, `created`, `modified`) VALUES
-(1, 'none', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, NULL);
+INSERT INTO `tbl_meeting` (`id`, `title`, `sub_title`, `note`, `date`, `end_time`, `conducted_by`, `held_status`, `enable`, `created`, `modified`) VALUES
+(1, NULL, NULL, 'none', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, NULL),
+(2, NULL, NULL, 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:24', '2015-06-09 20:22:24'),
+(3, NULL, NULL, 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:36', '2015-06-09 20:22:36');
 
 -- --------------------------------------------------------
 
