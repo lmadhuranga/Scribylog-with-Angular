@@ -7,7 +7,7 @@
                                     <div class="action text-right"><a href="#">fogot pasword</a></div>
                                 </header>
                                 <div class="">
-                                    <form class="form-300 center-block">
+                                    <form class="form-300 center-block" method="POST" action="<?php echo site_url('api/user/login') ?>">
                                         <div class="form-group">
                                             <input type="email" name="email" class="inputboxline" id="exampleInputEmail1" placeholder="Email">
                                         </div>
