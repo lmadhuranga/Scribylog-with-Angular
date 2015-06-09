@@ -12,12 +12,12 @@
         
 /***********************************************************************************/
 /*                                                                                 */
-/* File Name     : Home.php                                           */
+/* File Name     : Dashboard.php                                           */
 /* Purpose       :                                                                 */
 /*                                                                                 */
 /*                                                                                 */
 /***********************************************************************************/
-class Home extends Frontend_Controller
+class Dashboard extends Member_Controller
 {
     
     function __construct()
@@ -34,10 +34,12 @@ class Home extends Frontend_Controller
      */
     public function index()
     {
-        $this->load->view('front/home_page');
+        $this->load->view('member/dashboard_view');
     }
     /*---------------End of index()---------------*/
+
+
 }
 
-/* End of file Home.php */
-/* Location: ./system/application/controllers/Home.php */
+/* End of file User.php */
+/* Location: ./system/application/controllers/User.php */

@@ -51,6 +51,11 @@ class  user_model extends MY_Model
                             'rules'=>'trim|xss_clean|max_length[45]'
                         ),
                         array(
+                            'field'=>'user_type',
+                            'label'=>'User Role',
+                            'rules'=>'trim|xss_clean|max_length[11]'
+                        ),
+                        array(
                             'field'=>'enable',
                             'label'=>'Enable',
                             'rules'=>'trim|xss_clean|max_length[1]'
@@ -121,6 +126,18 @@ class  user_model extends MY_Model
         }
     }
     /*---------------- ---------End of is_email()---------------------------*/
+       
+
+    /**
+     * @author                          Madhuranga Senadheera
+     * Purpose of the function          Get the user tyep
+     * 
+    */
+    public function get_user_type()
+    {
+        return  $this->session->userdata('user_type');
+    }
+    /*---------------- ---------End of get_user_type()---------------------------*/
    
 
     
@@ -158,7 +175,7 @@ class  user_model extends MY_Model
     { 
         
         
-        $user_data = $this->user_model->get_by(array('email'=>$email,'password'=>$this->hash_password($password)), array('id', 'email','fname','lname','enable'),NULL , TRUE); 
+        $user_data = $this->user_model->get_by(array('email'=>$email,'password'=>$this->hash_password($password)), array('id', 'email','fname','lname','enable','user_type'),NULL , TRUE); 
          // echo $this->db->last_query(); exit('users_model_file ln:'.__LINE__);
         // user name and password corect
         if (sizeof($user_data)==1) 
@@ -171,6 +188,7 @@ class  user_model extends MY_Model
                                     'user_id'=> $user_data->id,
                                     'email'  => $user_data->email,
                                     'fname'  => $user_data->fname,
+                                    'user_type'  => $user_data->user_type,
                                     'lname'  => $user_data->lname, 
                                     'loggedin'  => TRUE,
                                 ); 
@@ -218,6 +236,7 @@ class  user_model extends MY_Model
                                 'email'=>'',
                                 'fname'=>'',
                                 'lname'=>'',
+                                'user_type'=>'',
                                 'loggedin'=>''
                          );
 

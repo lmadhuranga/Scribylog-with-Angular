@@ -12,12 +12,12 @@
         
 /***********************************************************************************/
 /*                                                                                 */
-/* File Name     : Home.php                                           */
+/* File Name     : User.php                                           */
 /* Purpose       :                                                                 */
 /*                                                                                 */
 /*                                                                                 */
 /***********************************************************************************/
-class Home extends Frontend_Controller
+class User extends Member_Controller
 {
     
     function __construct()
@@ -32,12 +32,15 @@ class Home extends Frontend_Controller
      * @variable                         : type
      * @return                             return_type 
      */
-    public function index()
+    public function login()
     {
-        $this->load->view('front/home_page');
+        $this->load->view('member/user_login');
     }
     /*---------------End of index()---------------*/
+
+
+
 }
 
-/* End of file Home.php */
-/* Location: ./system/application/controllers/Home.php */
+/* End of file User.php */
+/* Location: ./system/application/controllers/User.php */

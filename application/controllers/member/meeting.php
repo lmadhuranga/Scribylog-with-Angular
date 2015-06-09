@@ -12,12 +12,12 @@
         
 /***********************************************************************************/
 /*                                                                                 */
-/* File Name     : Home.php                                           */
+/* File Name     : Meeting.php                                           */
 /* Purpose       :                                                                 */
 /*                                                                                 */
 /*                                                                                 */
 /***********************************************************************************/
-class Home extends Frontend_Controller
+class Meeting extends Member_Controller
 {
     
     function __construct()
@@ -34,10 +34,12 @@ class Home extends Frontend_Controller
      */
     public function index()
     {
-        $this->load->view('front/home_page');
+        $this->load->view('member/meeting_list');
     }
     /*---------------End of index()---------------*/
+
+
 }
 
-/* End of file Home.php */
-/* Location: ./system/application/controllers/Home.php */
+/* End of file User.php */
+/* Location: ./system/application/controllers/User.php */
