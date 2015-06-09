@@ -1,6 +1,4 @@
-
-
-  <body>
+<body>
 
 <section class="main-block">
   <div class="row">
@@ -81,81 +79,82 @@
             </div>
         </div>
         <div class="col-lg-10 col-sm-12">
-            <section class="main-content all-minutes">
-                <header class="title clearfix">
-                    <h2>All the minites records</h2>
-                </header>
-
-
-
-                <article class="center-section">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-2 col-md-offset-2">
-                            <div class="today-date-time-wrap text-center">
-                                <div class="date-text">Sunday</div>
-                                <div class="date-number">7</div>
-                                <div class="month">June</div>
-                                <div class="time">12:11 am</div>
+            <section class="main-content">
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <article class="main-section">
+                            <div class="minutes-WD">
+                                <header class="title clearfix">
+                                    <h2>Today minutes</h2>
+                                    <div class="action text-right"><a href="#">subtitle</a></div>
+                                </header>
+                                <div class="today-minuts">
+                                    <textarea id="getTodayMinuts"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't</p>
-                            </div>
-                            <ul id="tagList" class="list-inline list-unstyled">
-                                <li class="tag">jQuery</li><li class="tag">process improvement</li><li class="tag">team utilization</li><li class="tag">modularization</li>
-                            </ul>
-                        </div>
+                        </article>
                     </div>
-                </article>
+                    <aside class="col-md-4 col-xs-12">
 
+                        <div class="side-panal-wrap">
+                            <article class="aside-section">
+                                <header class="title clearfix">
+                                    <h2>Goals</h2>
+                                    <div class="action text-right"><a href="#">Set new goal</a></div>
+                                </header>
+                                <div class="">
+                                    <ol id="goalsList">
+                                        <li><input type="text" id="getGoals" class="inputboxline" /></li>
+                                    </ol>
+                                </div>
+                            </article>
 
+                            <article class="aside-section">
+                                <header class="title clearfix">
+                                    <h2>Attendies</h2>
+                                    <div class="action text-right"><a href="#">Gest member</a></div>
+                                </header>
+                                <div class="">
+                                  <ul class="list-unstyled">
+                                        <li><label><span>Nalinda bandara</span></label></li>
+                                        <li><label><span>Shabith The</span></label></li>
+                                        <li><label><span>Ishan Rath</span></label></li>
+                                        <li><label><span>Ranuska goo</span></label></li>
+                                  </ul>
+                                </div>
+                            </article>
 
-                <article class="center-section">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-2 col-md-offset-2">
-                            <div class="today-date-time-wrap text-center">
-                                <div class="date-text">Sunday</div>
-                                <div class="date-number">7</div>
-                                <div class="month">June</div>
-                                <div class="time">12:11 am</div>
-                            </div>
+                            <article class="aside-section">
+                                <header class="title clearfix">
+                                    <h2>Tags</h2>
+                                </header>
+                                <div class="">
+                                    <style>
+                                        #tagList  li{
+                                            border: 1px solid;
+                                            margin: 5px;
+                                            padding: 2px 8px;
+                                            cursor: pointer;
+                                        }
+                                    </style>
+                                    <ul id="tagList" class="list-inline list-unstyled">
+                                        <li style="display: block" ><input type="text" id="getTags" placeholder="tags help you to find later" class="inputboxline text-center" /></li>
+                                    </ul>
+                                </div>
+                            </article>
+
+                            <article class="aside-section">
+                                <header class="title clearfix">
+                                    <h2>Duration</h2>
+                                </header>
+                                <div class="">
+                                    <input type="text" id="GetDuration" placeholder="HH:MM" class="inputboxline text-center" />
+                                </div>
+                            </article>
+
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't</p>
-                            </div>
-                            <ul id="tagList" class="list-inline list-unstyled">
-                                <li class="tag">jQuery</li><li class="tag">process improvement</li><li class="tag">team utilization</li><li class="tag">modularization</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="center-section">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-2 col-md-offset-2">
-                            <div class="today-date-time-wrap text-center">
-                                <div class="date-text">Sunday</div>
-                                <div class="date-number">7</div>
-                                <div class="month">June</div>
-                                <div class="time">12:11 am</div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't</p>
-                            </div>
-                            <ul id="tagList" class="list-inline list-unstyled">
-                                <li class="tag">jQuery</li><li class="tag">process improvement</li><li class="tag">team utilization</li><li class="tag">modularization</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-
-
+                    </aside>
+                </div>
             </section>
         </div>
     </div>

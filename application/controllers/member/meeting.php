@@ -34,7 +34,22 @@ class Meeting extends Member_Controller
      */
     public function index()
     {
-        $this->load->view('member/meeting_list');
+        $this->data['subview'] = 'member/meeting_list';
+        $this->load->view('member/_layout_main',$this->data);
+    }
+    /*---------------End of index()---------------*/
+
+
+    /**
+     * @author                          Madhuranga Senadheera
+     * Purpose of the function          Description
+     * @variable                         : type
+     * @return                             return_type 
+     */
+    public function add()
+    {
+        $this->data['subview'] = 'member/meeting_add';
+        $this->load->view('member/_layout_main',$this->data);
     }
     /*---------------End of index()---------------*/
 
