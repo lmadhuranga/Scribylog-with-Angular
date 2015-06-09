@@ -53,6 +53,19 @@ class Meeting extends Member_Controller
     }
     /*---------------End of index()---------------*/
 
+    /**
+     * @author                          Madhuranga Senadheera
+     * Purpose of the function          Description
+     * @variable                         : type
+     * @return                             return_type 
+     */
+    public function view()
+    {
+        $this->data['subview'] = 'member/meeting_view';
+        $this->load->view('member/_layout_main',$this->data);
+    }
+    /*---------------End of index()---------------*/
+
 
 }
 
