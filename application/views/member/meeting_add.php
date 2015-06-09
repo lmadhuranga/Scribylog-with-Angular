@@ -3,7 +3,8 @@
                         <article class="main-section">
                             <div class="minutes-WD">
                                 <header class="title clearfix">
-                                    <h2>Today minutes</h2>
+                                    <input type="hidden" id='id' value="<?php  echo($id) ?>">
+                                    <h2><input type="text" id="title" value="New Meeting"></h2>
                                     <div class="action text-right"><a href="#">subtitle</a></div>
                                 </header>
                                 <div class="today-minuts">
@@ -73,3 +74,26 @@
                         </div>
                     </aside>
                 </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#title').blur(function(event) {
+            $.ajax({
+                url: '<?php echo site_url("api/meeting/data/".$id) ?>',
+                type: 'PUT',
+                dataType: 'application/json',
+                data: {title: $('#title').val(),sub_title: $('#sub_title').val(),note:$('#note').val() },
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+            
+        });
+    });
+</script>
