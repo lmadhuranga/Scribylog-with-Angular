@@ -50,12 +50,14 @@ class Member_Controller extends MY_Controller
                 // redirect to member
                 if (($this->user_model->get_user_type() != '1'))
                 {
-                    // redirect member dashboard
-                    redirect('member/dashboard');
+                    // redirect member login
+                    redirect('member/login');
                 }
 
                 // set user id
                 $this->data['current_user_id'] = $this->user_model->get_current_user_id();
+                $this->data['fname'] = $this->user_model->get_fname();
+                $this->data['lname'] = $this->user_model->get_lname(); 
             }
         }  
  

@@ -140,6 +140,30 @@ class  user_model extends MY_Model
     /*---------------- ---------End of get_user_type()---------------------------*/
    
 
+    /**
+     * @author                          Madhuranga Senadheera
+     * Purpose of the function           
+     * 
+    */
+    public function get_fname()
+    {
+        return  $this->session->userdata('fname');
+    }
+    /*---------------- ---------End of get_fname()---------------------------*/
+      
+
+    /**
+     * @author                          Madhuranga Senadheera
+     * Purpose of the function          
+     * 
+    */
+    public function get_lname()
+    {
+        return  $this->session->userdata('lname');
+    }
+    /*---------------- ---------End of get_lname()---------------------------*/
+   
+
     
     /**
      * @author                          Madhuranga Senadheera

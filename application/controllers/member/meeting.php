@@ -33,7 +33,7 @@ class Meeting extends Member_Controller
      * @return                             return_type 
      */
     public function index()
-    {
+    { 
         $this->data['subview'] = 'member/meeting_list';
         $this->load->view('member/_layout_main',$this->data);
     }

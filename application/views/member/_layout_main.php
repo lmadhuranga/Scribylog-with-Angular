@@ -53,7 +53,7 @@
             </div>
             <div class="col-xs-10">
                 <div class="title-n-search">
-                    <h1 class="main-title">Scribe Frontend Devolopers</h1>
+                    <h1 class="main-title">Scribe Frontend Devolopers(<?php echo $fname ?>)</h1>
                     <div class="main-top-icons text-right">
                         <div>
                             <a href="#" id="scribe-search" class="scribe-search icon-btn pull-right">
