@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2015 at 08:56 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: Jun 10, 2015 at 07:41 AM
+-- Server version: 5.5.36
+-- PHP Version: 5.4.27
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -130,6 +131,7 @@ INSERT INTO `tbl_meeting_goals` (`id`, `goal`, `by`, `meeting_id`, `enable`, `cr
 CREATE TABLE IF NOT EXISTS `tbl_meeting_held_status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL,
+  `img` varchar(100) DEFAULT 'default.jpg',
   `enable` char(1) DEFAULT '1',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -140,12 +142,12 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_held_status` (
 -- Dumping data for table `tbl_meeting_held_status`
 --
 
-INSERT INTO `tbl_meeting_held_status` (`id`, `name`, `enable`, `created`, `modified`) VALUES
-(1, 'Planed', '1', NULL, NULL),
-(2, 'On going', '1', NULL, NULL),
-(3, 'Held', '1', NULL, NULL),
-(4, 'Cancel', '1', NULL, NULL),
-(5, 'Postpond', '1', NULL, NULL);
+INSERT INTO `tbl_meeting_held_status` (`id`, `name`, `img`, `enable`, `created`, `modified`) VALUES
+(1, 'Planed', 'default.jpg', '1', NULL, NULL),
+(2, 'On going', 'default.jpg', '1', NULL, NULL),
+(3, 'Held', 'default.jpg', '1', NULL, NULL),
+(4, 'Cancel', 'default.jpg', '1', NULL, NULL),
+(5, 'Postpond', 'default.jpg', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -265,7 +267,6 @@ CREATE TABLE IF NOT EXISTS `tbl_user_group` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `tbl_user_group`
---
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
