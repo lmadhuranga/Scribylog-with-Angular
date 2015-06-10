@@ -973,16 +973,16 @@ abstract class REST_Controller extends MY_Controller
         // If no file type is provided, this is probably just arguments
         else {
             parse_str(file_get_contents('php://input'), $this->_put_args);
-            if (!=null) {
-                $jdecode_str_request_body = json_decode($this->_put_args);
-                // convert to array and assign to post
                 $_POST = get_object_vars($jdecode_str_request_body); 
+            // if (!=null) {
+            //     $jdecode_str_request_body = json_decode($this->_put_args);
+            //     // convert to array and assign to post
 
-            }
-            else
-            {
-                $_POST = array();
-            }
+            // }
+            // else
+            // {
+            //     $_POST = array();
+            // }
         }
 
     }
