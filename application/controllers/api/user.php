@@ -33,7 +33,7 @@ class User extends REST_Controller
     //
     //@ type :
     //#return type :
-    function data_get()
+    function index_get()
     {   
         // return araray ini
         $json_return_array = array();
@@ -85,7 +85,7 @@ class User extends REST_Controller
     //
     //@ type :
     //#return type :
-    function data_put($id=NULL)
+    function index_put($id=NULL)
     {
         // return araray ini
         $json_return_array = array();  
@@ -127,7 +127,7 @@ class User extends REST_Controller
     //  Description
     //  @ type :
     //  #return type :
-    public function data_post()
+    public function index_post()
     { 
         // return araray ini
         $json_return_array = array();
@@ -170,7 +170,7 @@ class User extends REST_Controller
     //  Description
     //  @ type :
     //  #return type :
-    public function data_delete()
+    public function index_delete()
     {   
         // return araray ini
         $json_return_array = array();  
