@@ -49,7 +49,7 @@ MeetingApp.controller('MeetingListController',function($scope,Meetings){
     // create sample meetings  
     $scope.Meetings=new Meetings();  
     // add new meeting
-    $scope.createMeeting=function(){ 
+    $scope.addMeeting=function(){ 
         // send ajax request to add the meeting
          $scope.Meetings.$create(function(){
             // list updated meeting list
