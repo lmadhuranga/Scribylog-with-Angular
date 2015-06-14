@@ -35,6 +35,8 @@ class Meeting extends REST_Controller
     //#return type :
 	function index_get()
 	{   
+        $this->load->model('meeting_tag_model');
+        $this->load->model('tags_model');
         // return araray ini
         $json_return_array = array();
 
@@ -57,8 +59,41 @@ class Meeting extends REST_Controller
         }
         else
         {
-            // send all record
-            $json_return_array = $this->meeting_model->get_by(array(),'id,note,title,date,end_time,conducted_by,held_status,enable');   
+            // get all 
+            $meeting_list = $this->meeting_model->get_by(array(),'id,note,title,date,end_time,conducted_by,held_status,enable');   
+            if (sizeof($meeting_list)>0)
+            {
+                foreach ($meeting_list as $key1 => $meeting)
+                {  
+                    // get tag id for meeting
+                    $meeting_tag_id_list = $this->meeting_tag_model->get_by(array('meeting_id'=>$meeting['id']));
+                    if(sizeof($meeting_tag_id_list)>0)
+                    {
+                        $meeting_list[$key1]['tags_array'] = array();
+                        // get the tag name
+                        foreach ($meeting_tag_id_list as $key2 => $meeting_tag_id)
+                        { 
+                           $meeting_list[$key1]['tags_array'][$meeting_tag_id['tag_id']] =  $this->tags_model->get('tag,id',$meeting_tag_id['tag_id']);
+
+                        }
+                    }
+                    // no tags
+                    else
+                    {
+                        $meeting_list[$key1]['tags_array'] = array();
+                    }
+                }
+
+            }
+            // no meetings
+            else
+            {
+                $meeting_list = array();
+            }
+            
+
+            $json_return_array =  $meeting_list;
+
         } 
 
         // response

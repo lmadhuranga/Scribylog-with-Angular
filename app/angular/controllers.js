@@ -58,7 +58,6 @@ MeetingApp.controller('MeetingListController',function($scope,Meetings){
     }
 
 }).controller('MeetingViewController',function($scope,Meeting,$routeParams){
-    // get meeting by ajax
-    $scope.Meeting = Meeting.get({id:$routeParams.id});
-
+    // get meeting by ajax 
+    $scope.Meeting = Meeting.get({id:$routeParams.id}); 
 }) 

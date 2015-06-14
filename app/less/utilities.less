@@ -1,0 +1,325 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  .clearfix();
+}
+.center-block {
+  .center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  .text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+body{
+  background-color: @gray-lighter;
+    font-family: "Open Sans";
+
+}
+
+h1,h2{
+  color: @gray-light;
+  font-weight: 100;
+}
+label{
+  font-weight: normal;
+  cursor: pointer;
+}
+.icon-btn{
+  stroke:@gray-light;
+  color: @gray-light;
+  display: block;
+  text-transform: capitalize;
+  cursor: pointer;
+    stroke-width: 1.4px;
+}
+input[type=checkbox]{
+  margin: 0 20px;
+}
+.icon-btn{
+  &:hover,
+  &.active{
+  stroke:@brand-primary;
+  color: @brand-primary;
+  text-decoration: none;
+  }
+}
+.inputboxline{
+  border: 0;
+  border-bottom: 2px solid;
+  width: 100%;
+  height: 54px;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 100;
+  &:focus{
+    outline: none;
+  }
+}
+.form-300{
+  max-width: 300px;
+}
+.today-date-time-wrap{
+    #today-date-text{
+      font-size: 21px;
+    }
+    #today-date-number{
+      font-size: 74px;
+      line-height: 66px;
+    }
+    #today-month{
+      font-size: 21px;
+    }
+    #today-time{
+      font-size: 21px;
+    }
+}
+.today-date-time-wrap,
+.new-scribe{
+  margin-top: 60px;
+  color: @gray-light;
+}
+.logo,
+.today-date-time-wrap,
+.new-scribe,
+.scribe-control{
+  max-width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-n-search{
+  height: 100px;
+}
+
+.scribe-search{
+  max-width: 54px;
+  padding: 10px;
+  margin-top: 25px;
+}
+
+.main-block{
+  margin: 0 40px;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 32px;
+  margin-top: 40px;
+}
+
+.main-top-icons{
+  width: 10%;
+  float: left;
+}
+.main-title{
+  width: 90%;
+  float: left;
+  line-height: 100px;
+  margin: 0;
+}
+
+.main-content{
+  background: #fff;
+    margin-top: -29px;
+}
+.side-panal-wrap{
+//  border-left: 1px solid @gray-lighter;
+}
+.aside-section{
+  color: @gray-light;
+}
+.side-panal-wrap .aside-section{
+  padding-left: 15px;
+  font-size: 14px;
+}
+.main-section,
+.aside-section{
+  border-bottom: 1px solid @gray-lighter;
+  border-left: 1px solid @gray-lighter;
+  margin: 0 -15px;
+  padding: 0 30px;
+  padding-bottom: 20px;
+}
+
+.minutes-WD{
+  max-width: 600px;
+    margin: 0 0 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+    font-stretch: expanded;
+  color: @brand-primary;
+}
+
+header.title{
+  border-bottom: 2px solid @gray-lighter;
+  margin-bottom: 30px;
+  h2{
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+  }
+  .action{
+      width: 40%;
+      float: left;
+      padding-right: 15px;
+      margin-top: 20px;
+      line-height: 36px;
+    a{
+
+    }
+  }
+}
+
+.today-minuts{
+  padding: 0 30px;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 500;
+  textarea{
+    width: 100%;
+        background-image: -webkit-linear-gradient(white, white 31px, @gray-lighter 31px, @gray-lighter 32px, white 32px);
+    background-image: -moz-linear-gradient(white, white 31px, @gray-lighter 31px, @gray-lighter 32px, white 32px);
+    background-image: -ms-linear-gradient(white, white 31px, @gray-lighter 31px, @gray-lighter 32px, white 32px);
+    background-image: -o-linear-gradient(white, white 31px, @gray-lighter 31px, @gray-lighter 32px, white 32px);
+    background-image: linear-gradient(white, white 31px, @gray-lighter 31px, @gray-lighter 32px, white 32px);
+    background-size: 100% 32px;
+    border: 0;
+    padding-top: 6px;
+    line-height: 32px;
+    min-height: 500px;
+    margin-bottom: 100px;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+#goalsList {
+  
+  li{
+    
+    &:hover{
+        text-decoration: line-through;
+        color: @brand-danger;
+        cursor: pointer;
+      }
+    &:last-child{
+      &:hover{
+        text-decoration: none;
+        color: @gray-light;
+      }
+    }
+  }
+}
+// #goalsList li:not(:last-child){
+//   &:before{
+//   content: "x";
+//   position: absolute;
+//   margin-left: -44px;
+//   color: red;
+//   font-weight: bold;
+//   display: none;
+//   width: 50px;
+//   padding-left: 8px;
+//   cursor: pointer;
+//   }
+
+//   &:hover:before{
+//     display: inline-block;
+//   }
+
+// }
+
+//.pad0{
+//  padding: 0;
+//}
+
+/*control-panel*/
+
+.control-panel{
+  color: @gray-light;
+  padding-bottom: 40px;
+
+  .center-section{
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid @gray-lighter;
+  }
+
+  .well{
+    padding-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow:none;
+    background: @gray-lighter;
+  }
+
+
+  .stats{
+    .number{
+      font-size: 74px;
+      line-height: 66px;
+    }
+    .text{
+      font-size: 21px;
+      line-height: 66px;
+    }
+  }
+}
+
+
+/*all-minutes*/
+.all-minutes{
+  .center-section{
+    border-bottom: 1px solid @gray-lighter;
+  }
+  .today-date-time-wrap{
+    margin-top: 0;
+
+  }
+
+}

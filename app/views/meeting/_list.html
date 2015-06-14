@@ -1,7 +1,32 @@
-<ul>
-	<li ng-repeat="Meeting in Meetings">
-		 <a href="#meeting/view/{{Meeting.id}}"> {{Meeting.title}}</a>
-	</li>
-</ul>
+<section class="main-content all-minutes">
+    <header class="title clearfix">
+        <h2>All the minites records</h2>
+    </header>
 
-<a href="#meeting/">Back</a> <br/>
+ 
+    <article ng-repeat="Meeting in Meetings" class="center-section">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 col-md-offset-2">
+                <div class="today-date-time-wrap text-center">
+                    <div class="date-text">Sunday</div>
+                    <div class="date-number">7</div>
+                    <div class="month">June</div>
+                    <div class="time">12:11 am</div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="">
+                <h3><a href="#meeting/view/{{Meeting.id}}">{{Meeting.title}}</a></h3>
+                    <p>{{Meeting.note}}</p>
+                </div>
+                <ul id="tagList" class="list-inline list-unstyled">
+                	<li class="tag"  ng-repeat="tag in Meeting.tags_array">
+                		<a href="#tag/view/{{tag.id}}">{{tag.tag}}</a>
+                	</li>
+                	 
+                </ul>
+            </div>
+        </div>
+    </article>
+ 
+</section>

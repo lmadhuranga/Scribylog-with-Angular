@@ -20,7 +20,7 @@ class  tags_model extends MY_Model
 {
     protected $_table_name      ='tbl_tags';
     protected $_primary_key     ='id';
-    protected $_order_by        ='ASC';
+    protected $_order_by        ='DESC';
     // protected $_primary_filter  ='';
     protected $_timestamps      =TRUE;    
     // rules
