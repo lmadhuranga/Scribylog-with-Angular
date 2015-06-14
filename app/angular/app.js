@@ -46,15 +46,18 @@ MeetingApp = angular.module('MeetingApp', [
 										{
 											templateUrl: 'views/meeting/_list.html',
 											controller: 'MeetingListController'
-										}).when('/meeting/add', 
+										}).
+				    					when('/meeting/add', 
 										{
 											templateUrl: 'views/meeting/_add.html',
 											controller: 'MeetingAddController'
-										}).when('/meeting/view/:id', 
+										}).
+										when('/meeting/view/:id', 
 										{
 											templateUrl: 'views/meeting/_view.html',
 											controller: 'MeetingViewController'
-										}).when('/meeting/edit/:id', 
+										}).
+										when('/meeting/edit/:id', 
 										{
 											templateUrl: 'views/meeting/_edit.html',
 											controller: 'MeetingUpdateController'

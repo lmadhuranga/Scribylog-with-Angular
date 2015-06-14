@@ -44,11 +44,26 @@ class Meeting extends REST_Controller
         $id = $this->input->get('id'); 
         if($id!=false)
         {
-            $meeting = $this->meeting_model->get_by(array('id'=>$id),'*');
+            // get meeting details
+            $meeting = $this->meeting_model->get_by(array('id'=>$id),'*',TRUE);
             if (sizeof($meeting)>0)
-            {
-                $json_return_array['data']      = end($meeting);
-                $json_return_array['status']    = 'success';
+            { 
+                $meeting->tags_array = array();
+                // get tag id for meeting
+                $meeting_tag_id_list = $this->meeting_tag_model->get_by(array('meeting_id'=>$id));
+                if(sizeof($meeting_tag_id_list)>0)
+                {
+                    // get the tag name
+                    foreach ($meeting_tag_id_list as $key2 => $meeting_tag_id)
+                    { 
+                        // get each tag name
+                       $meeting->tags_array[$meeting_tag_id['tag_id']] =  $this->tags_model->get('tag,id',$meeting_tag_id['tag_id']);
+
+                    }
+                } 
+
+                // send data to front end
+                $json_return_array = ($meeting);
             }
             else
             {
@@ -56,11 +71,12 @@ class Meeting extends REST_Controller
                 $json_return_array['msg'] = 'No Data';
                 $json_return_array['status'] = 'no_data';
             }
+
         }
         else
         {
             // get all 
-            $meeting_list = $this->meeting_model->get_by(array(),'id,note,title,date,end_time,conducted_by,held_status,enable');   
+            $meeting_list = $this->meeting_model->get_by(array(),'id,note,title,sub_title,date,end_time,conducted_by,held_status,enable');   
             if (sizeof($meeting_list)>0)
             {
                 foreach ($meeting_list as $key1 => $meeting)
@@ -127,7 +143,7 @@ class Meeting extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,title,note,date,end_time,conducted_by,held_status,enable')); 
+            $form_data = $this->post_get_as_array(array('id,title,sub_title,note,date,end_time,conducted_by,held_status,enable')); 
     
             if ($this->meeting_model->save($form_data,$form_data['id'])) {
     
@@ -169,7 +185,7 @@ class Meeting extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,title,note,date,end_time,conducted_by,held_status,enable')); 
+            $form_data = $this->post_get_as_array(array('id,title,sub_title,note,date,end_time,conducted_by,held_status,enable')); 
     
             if ($this->meeting_model->save($form_data)) {
     
