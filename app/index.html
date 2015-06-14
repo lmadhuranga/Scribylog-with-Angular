@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title> 
-	<!--  <base href="http://localhost/scribe/app/" target="_blank">  -->
+	<title></title>  
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-resource.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.min.js"></script>
@@ -12,7 +11,15 @@
 </head>
 <body >
 	<h1>hi</h1>
-	<div ng-app="UserApp">
+	<div ng-app="MeetingApp">
+		<div ng-view></div>
 	</div>
+	
+	<div ng-app="UserApp">
+		<div ng-view></div>
+	</div>
+
+
+
 </body>
 </html>

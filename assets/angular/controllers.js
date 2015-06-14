@@ -28,8 +28,7 @@ angular.module('UserApp.controllers',[])
 })
 
 // UserViewController
-.controller('UserViewController',function($scope,$state,$stateParams,User){
-    console.log('id:'+$stateParams.id);
+.controller('UserViewController',function($scope,$state,$stateParams,User){ 
     // get organization details
     $scope.User = User.get({id:$stateParams.id});
 
@@ -37,8 +36,7 @@ angular.module('UserApp.controllers',[])
 // UserCreateController
 .controller('UserCreateController',function($scope,$state,$stateParams,Users,User){
     // get organization list
-    $scope.Users=new Users();
-    console.log('create fun');
+    $scope.Users=new Users(); 
     // add new oraganizaiton
     $scope.createUser=function(){
         console.log('create user');

@@ -39,7 +39,7 @@ class User extends REST_Controller
         $json_return_array = array();
 
         // If id send send single record
-        $id = $this->input->get('id'); 
+        $id = $this->input->get('id');  
         if($id!=false)
         {
             $user = $this->user_model->get_by(array('id'=>$id),'*');
@@ -53,19 +53,9 @@ class User extends REST_Controller
             }
             else
             {
-                // get all record
-                $users_list = $this->user_model->get_by(array('enable'=>'1'),'id,fname,lname,email,img,enable');   
-                if (sizeof($users_list)>0)
-                {
-                    $json_return_array['data'] = $users_list;
-                    $json_return_array['status'] = 'success';
-                }
-                else
-                {
-                    // no data 
-                    $json_return_array['msg'] = 'No Data';
-                    $json_return_array['status'] = 'no_data';
-                }
+                // no data 
+                $json_return_array['msg'] = 'No Data';
+                $json_return_array['status'] = 'not_found';
             }
         }
         else

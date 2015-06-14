@@ -50,25 +50,15 @@ class Meeting extends REST_Controller
             }
             else
             {
-                // get all record
-                $meetings_list = $this->meeting_model->get_by(array('enable'=>'1'),'id,note,date,end_time,conducted_by,held_status,enable');   
-                if (sizeof($meetings_list)>0)
-                {
-                    $json_return_array['data'] = $meetings_list;
-                    $json_return_array['status'] = 'success';
-                }
-                else
-                {
-                    // no data 
-                    $json_return_array['msg'] = 'No Data';
-                    $json_return_array['status'] = 'no_data';
-                }
+                 // no data 
+                $json_return_array['msg'] = 'No Data';
+                $json_return_array['status'] = 'no_data';
             }
         }
         else
         {
             // send all record
-            $json_return_array = $this->meeting_model->get_by(array(),'id,note,date,end_time,conducted_by,held_status,enable');   
+            $json_return_array = $this->meeting_model->get_by(array(),'id,note,title,date,end_time,conducted_by,held_status,enable');   
         } 
 
         // response
@@ -102,7 +92,7 @@ class Meeting extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,note,date,end_time,conducted_by,held_status,enable')); 
+            $form_data = $this->post_get_as_array(array('id,title,note,date,end_time,conducted_by,held_status,enable')); 
     
             if ($this->meeting_model->save($form_data,$form_data['id'])) {
     
@@ -144,7 +134,7 @@ class Meeting extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,note,date,end_time,conducted_by,held_status,enable')); 
+            $form_data = $this->post_get_as_array(array('id,title,note,date,end_time,conducted_by,held_status,enable')); 
     
             if ($this->meeting_model->save($form_data)) {
     

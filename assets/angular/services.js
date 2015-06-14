@@ -4,6 +4,7 @@
 var services = angular.module('UserApp.services', ['ngResource']);
  
 services.factory('Users', function ($resource) {
+    
     return $resource(site_url+'/api/user/index/', {}, {
         query: { method: 'GET', isArray: true },
         create: { method: 'POST' }
