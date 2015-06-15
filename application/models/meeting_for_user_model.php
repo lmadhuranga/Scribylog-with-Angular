@@ -20,7 +20,7 @@ class  meeting_for_user_model extends MY_Model
 {
     protected $_table_name      ='tbl_meeting_for_user';
     protected $_primary_key     ='id';
-    protected $_order_by        ='ASC';
+    protected $_order_by        ='id';
     // protected $_primary_filter  ='';
     protected $_timestamps      =TRUE;    
     // rules

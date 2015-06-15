@@ -20,7 +20,7 @@ class  meeting_held_status_model extends MY_Model
 {
     protected $_table_name      ='tbl_meeting_held_status';
     protected $_primary_key     ='id';
-    protected $_order_by        ='ASC';
+    protected $_order_by        ='id';
     // protected $_primary_filter  ='';
     protected $_timestamps      =TRUE;    
     // rules

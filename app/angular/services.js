@@ -3,7 +3,7 @@
  */ 
 var UserAppServices = angular.module('UserApp.UserAppServices', ['ngResource']);
 
-var site_url = 'http://localhost/Angular_scribylog/index.php';
+var site_url = 'http://localhost/Scribylog-with-Angular/index.php';
 
 
 

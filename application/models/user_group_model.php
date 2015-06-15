@@ -20,7 +20,7 @@ class  user_group_model extends MY_Model
 {
     protected $_table_name      ='tbl_user_group';
     protected $_primary_key     ='id';
-    protected $_order_by        ='ASC';
+    protected $_order_by        ='id';
     // protected $_primary_filter  ='';
     protected $_timestamps      =TRUE;    
     // rules
