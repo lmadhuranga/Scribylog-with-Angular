@@ -41,7 +41,7 @@ controller('UserUpdateController',function($scope,User,$routeParams){
  
 
 
-MeetingApp =  angular.module('MeetingApp.controllers',['MeetingApp.services','MeetingGoalApp.services']) 
+MeetingApp =  angular.module('MeetingApp.controllers',['MeetingApp.services','MeetingGoalApp.services','MeetingTagApp.services']) 
 MeetingApp.
 controller('MeetingListController',function($scope,Meetings){
     // get meeting list by ajax
@@ -66,10 +66,11 @@ controller('MeetingViewController',function($scope,Meeting,$routeParams){
     // get meeting by ajax 
     $scope.Meeting = Meeting.get({id:$routeParams.id});  
 }). 
-controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,$routeParams){
+controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,Tag,Tags,$routeParams){
     // get Meeting by ajax
     $scope.Meeting = Meeting.get({id:$routeParams.id});  
     $scope.new_goal  = new Goals();
+    $scope.new_tag  = new Tags();
 
     $scope.updateMeeting=function(){ 
         console.log($scope.Meeting);
@@ -81,14 +82,6 @@ controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,$routePa
         });
     }
 
-    $scope.deleteGoal = function(goal,index){  
-        // send ajax request to add the Meeting
-        Goal_t = new Goal();
-        Goal_t.id = goal.id;
-        Goal_t.$delete(function(){
-            $scope.Meeting.meeting_goals_array = Goals.query();
-        });
-    }
     // add goals
     $scope.addGoal = function()
     {  
@@ -100,4 +93,36 @@ controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,$routePa
             $scope.Meeting.meeting_goals_array = Goals.query();
         }); 
     }
+    $scope.deleteGoal = function(goal){  
+        // send ajax request to add the Meeting
+        Goal_t = new Goal();
+        Goal_t.id = goal.id;
+        Goal_t.$delete(function(){
+            $scope.Meeting.meeting_goals_array = Goals.query();
+        });
+    }
+
+    // add goals
+    $scope.addTag = function()
+    {  
+        // set meeting id
+        $scope.new_tag.meeting_id = $routeParams.id;  
+        $scope.new_tag.$create(function()
+        {
+            //::TODO load the tag list
+            console.log('TODO load the tag list');
+             
+        }); 
+    }
+    $scope.deleteTag = function(tag){  
+        // send ajax request to add the Meeting
+        Tag_t = new Tag();
+        Tag_t.id = tag.id;
+        Tag_t.$delete(function(){
+            $scope.Meeting.tags_array = Tags.query();
+        });
+    }
+
+
+    // tas add
 })

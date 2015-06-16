@@ -54,8 +54,7 @@ class Meeting_tag extends REST_Controller
                 $meeting_tags_list = $this->meeting_tag_model->get_by(array('enable'=>'1'),'id,meeting_id,tag_id,enable');   
                 if (sizeof($meeting_tags_list)>0)
                 {
-                    $json_return_array['data'] = $meeting_tags_list;
-                    $json_return_array['status'] = 'success';
+                    $json_return_array = $meeting_tags_list; 
                 }
                 else
                 {
@@ -128,12 +127,25 @@ class Meeting_tag extends REST_Controller
     //  #return type :
     public function index_post()
     { 
+        
+        $this->load->model('tags_model');
         // return araray ini
         $json_return_array = array();
         // load helpers 
         $this->load->library('form_validation'); 
         // set validation
-        $this->form_validation->set_rules($this->meeting_tag_model->rules);
+        $this->form_validation->set_rules( array(
+                                                'field'=>'meeting_id',
+                                                'label'=>'Meeting',
+                                                'rules'=>'required|trim|integer|xss_clean|max_length[11]'
+                                            ),
+                                            array(
+                                                'field'=>'tag',
+                                                'label'=>'New Tag',
+                                                'rules'=>'trim|xss_clean|max_length[1]'
+                                            )
+                                        );
+
         if ($this->form_validation->run()==false)
         {
             // validation error
@@ -144,21 +156,38 @@ class Meeting_tag extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,meeting_id,tag_id,enable')); 
+            $form_data = $this->post_get_as_array(array('id','meeting_id','tag')); 
+            if($form_data['tag']!=false)
+            {
+                // save new tag nage
+                if ($id = $this->tags_model->save(array('tag'=>$form_data['tag'])))
+                {
+                    // remove tag name
+                    unset($form_data['tag']);
+                    $form_data['tag_id'] = $id;
+                    if ($this->meeting_tag_model->save($form_data))
+                    {
     
-            if ($this->meeting_tag_model->save($form_data)) {
-    
-                $json_return_array['msg']       = 'System update success';
-                $json_return_array['status']    = 'success'; 
-    
+                        $json_return_array['msg']       = 'System update success';
+                        $json_return_array['status']    = 'success'; 
+            
+                    }
+                    else {
+                        $json_return_array['msg']       = 'System update failier';
+                        $json_return_array['status']    = 'error'; 
+                    }
+                }
+                else
+                {
+                    $json_return_array['msg']       = 'System update failier';
+                    $json_return_array['status']    = 'error'; 
+                }
             }
-            else {
-                $json_return_array['msg']       = 'System update failier';
-                $json_return_array['status']    = 'error'; 
-            }
+             
         }
     
         $this->response($json_return_array, 200); 
+        
     
     }//Function End data_post()---------------------------------------------------FUNEND()
 

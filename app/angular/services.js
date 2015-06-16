@@ -56,7 +56,7 @@ MeetingAppServices.factory('Meeting', function ($resource) {
 var MeetingGoalServices = angular.module('MeetingGoalApp.services', ['ngResource']);
 
 
-// meeting
+// Goals servies
 MeetingGoalServices.factory('Goals', function ($resource) {
     
     return $resource(site_url+'/api/meeting_goals/', {}, {
@@ -68,6 +68,25 @@ MeetingGoalServices.factory('Goals', function ($resource) {
 
 MeetingGoalServices.factory('Goal', function ($resource) { 
     return $resource(site_url+'/api/meeting_goals/index/', {}, {
+        get: { method: 'GET',params: {id: '@id'}},
+        update: { method: 'PUT', params: {id: '@id'} },
+        delete: { method: 'DELETE', params: {id: '@id'} }
+    })
+}) 
+
+
+var MeetingTagServices = angular.module('MeetingTagApp.services', ['ngResource']);
+
+MeetingTagServices.factory('Tags', function ($resource) {
+    return $resource(site_url+'/api/meeting_tag/', {}, {
+        query: { method: 'GET', isArray: true},
+        create: { method: 'POST' }
+    })
+});
+
+
+MeetingTagServices.factory('Tag', function ($resource) { 
+    return $resource(site_url+'/api/meeting_tag/index/', {}, {
         get: { method: 'GET',params: {id: '@id'}},
         update: { method: 'PUT', params: {id: '@id'} },
         delete: { method: 'DELETE', params: {id: '@id'} }

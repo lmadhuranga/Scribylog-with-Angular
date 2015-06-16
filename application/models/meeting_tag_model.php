@@ -25,21 +25,21 @@ class  meeting_tag_model extends MY_Model
     protected $_timestamps      =TRUE;    
     // rules
     public $rules = array(
-                    array(
-                                	'field'=>'meeting_id',
-                                	'label'=>'Meeting',
-                                	'rules'=>'required|trim|integer|xss_clean|max_length[11]'
-                                ),
-								array(
-                                	'field'=>'tag_id',
-                                	'label'=>'Tag',
-                                	'rules'=>'required|trim|integer|xss_clean|max_length[11]'
-                                ),
-								array(
-                                	'field'=>'enable',
-                                	'label'=>'Enable',
-                                	'rules'=>'trim|xss_clean|max_length[1]'
-                                )
+                            array(
+                            	'field'=>'meeting_id',
+                            	'label'=>'Meeting',
+                            	'rules'=>'required|trim|integer|xss_clean|max_length[11]'
+                            ),
+							array(
+                            	'field'=>'tag_id',
+                            	'label'=>'Tag',
+                            	'rules'=>'required|trim|integer|xss_clean|max_length[11]'
+                            ),
+							array(
+                            	'field'=>'enable',
+                            	'label'=>'Enable',
+                            	'rules'=>'trim|xss_clean|max_length[1]'
+                            )
         );
 
     /*********************Construct()****************************/

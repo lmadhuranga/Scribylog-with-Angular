@@ -24,7 +24,7 @@
                         </header>
                         <div class="">
                             <ol id="goalsList">
-                                <li class="goal"  ng-repeat="goal in Meeting.meeting_goals_array" ng-click="deleteGoal(goal,$index)">
+                                <li class="goal"  ng-repeat="goal in Meeting.meeting_goals_array" ng-click="deleteGoal(goal)">
                                     {{goal.goal}} 
                                 </li>
                                 <li><input type="text" ng-blur="addGoal()"  ng-model="new_goal.goal" id="getGoals" class="inputboxline" /></li>
@@ -61,7 +61,10 @@
                                 }
                             </style>
                             <ul id="tagList" class="list-inline list-unstyled">
-                                <li style="display: block" ><input type="text" id="getTags" placeholder="tags help you to find later" class="inputboxline text-center" /></li>
+                                <li class="tag"  ng-repeat="tag in Meeting.tags_array">
+                                    <a href="#tag/view/{{tag.id}}">{{tag.tag}}</a>
+                                </li>
+                                <li style="display: block" ><input type="text" id="getTags" ng-blur="addTag()"  ng-model="new_tag.tag" placeholder="tags help you to find later" class="inputboxline text-center" /></li>
                             </ul>
                         </div>
                     </article>
