@@ -51,3 +51,25 @@ MeetingAppServices.factory('Meeting', function ($resource) {
         delete: { method: 'DELETE', params: {id: '@id'} }
     })
 })
+
+
+var MeetingGoalServices = angular.module('MeetingGoalApp.services', ['ngResource']);
+
+
+// meeting
+MeetingGoalServices.factory('Goals', function ($resource) {
+    
+    return $resource(site_url+'/api/meeting_goals/', {}, {
+        query: { method: 'GET', isArray: true },
+        create: { method: 'POST' }
+    })
+});
+
+
+MeetingGoalServices.factory('Goal', function ($resource) { 
+    return $resource(site_url+'/api/meeting_goals/index/', {}, {
+        get: { method: 'GET',params: {id: '@id'}},
+        update: { method: 'PUT', params: {id: '@id'} },
+        delete: { method: 'DELETE', params: {id: '@id'} }
+    })
+})

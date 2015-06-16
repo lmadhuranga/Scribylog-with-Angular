@@ -143,9 +143,10 @@ class Meeting_goals extends REST_Controller
             
         }
         else
-        {
-            $form_data = $this->post_get_as_array(array('id,goal,by,meeting_id,enable')); 
-    
+        { 
+
+            $form_data = $this->post_get_as_array(array('id','goal','by','meeting_id')); 
+            $form_data['by'] = '1';
             if ($this->meeting_goals_model->save($form_data)) {
     
                 $json_return_array['msg']       = 'System update success';
@@ -178,7 +179,7 @@ class Meeting_goals extends REST_Controller
         $this->load->library('form_validation');   
         // set validation
         $_POST['id']  = $_GET['id'];
-        $this->form_validation->set_rules($this->meeting_goals_model->rules);
+        $this->form_validation->set_rules('id', 'Id', 'required');
         if ($this->form_validation->run()==false)
         {
             // validation error
@@ -190,7 +191,7 @@ class Meeting_goals extends REST_Controller
         else
         {
             
-            $form_data = $this->post_get_as_array(array('id')); 
+            $form_data = $this->post_get_as_array(array('id'));   
             if ($this->meeting_goals_model->delete($form_data['id'])) {
     
                 $json_return_array['msg']       = 'Deleted';

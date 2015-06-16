@@ -25,7 +25,7 @@ class  meeting_goals_model extends MY_Model
     protected $_timestamps      =TRUE;    
     // rules
     public $rules = array(
-                    array(
+                                array(
                                 	'field'=>'goal',
                                 	'label'=>'Goal',
                                 	'rules'=>'required|trim|xss_clean|max_length[45]'
@@ -33,7 +33,7 @@ class  meeting_goals_model extends MY_Model
 								array(
                                 	'field'=>'by',
                                 	'label'=>'Creator',
-                                	'rules'=>'required|trim|integer|xss_clean|max_length[11]'
+                                	'rules'=>'trim|integer|xss_clean|max_length[11]'
                                 ),
 								array(
                                 	'field'=>'meeting_id',

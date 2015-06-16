@@ -41,7 +41,7 @@ controller('UserUpdateController',function($scope,User,$routeParams){
  
 
 
-MeetingApp =  angular.module('MeetingApp.controllers',['MeetingApp.services']) 
+MeetingApp =  angular.module('MeetingApp.controllers',['MeetingApp.services','MeetingGoalApp.services']) 
 MeetingApp.
 controller('MeetingListController',function($scope,Meetings){
     // get meeting list by ajax
@@ -66,17 +66,38 @@ controller('MeetingViewController',function($scope,Meeting,$routeParams){
     // get meeting by ajax 
     $scope.Meeting = Meeting.get({id:$routeParams.id});  
 }). 
-controller('MeetingUpdateController',function($scope,Meeting,$routeParams){
+controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,$routeParams){
     // get Meeting by ajax
     $scope.Meeting = Meeting.get({id:$routeParams.id});  
- 
+    $scope.new_goal  = new Goals();
+
     $scope.updateMeeting=function(){ 
         console.log($scope.Meeting);
         // send ajax request to add the Meeting
         $scope.Meeting.$update(function(){
-        $scope.Meeting = Meeting.get({id:$routeParams.id});  
+            $scope.Meeting = Meeting.get({id:$routeParams.id});  
             // list updated Meeting list
             // redirectTo('/Meeting/view/'+$scope.Meeting.id)
         });
+    }
+
+    $scope.deleteGoal = function(goal,index){  
+        // send ajax request to add the Meeting
+        Goal_t = new Goal();
+        Goal_t.id = goal.id;
+        Goal_t.$delete(function(){
+            $scope.Meeting.meeting_goals_array = Goals.query();
+        });
+    }
+    // add goals
+    $scope.addGoal = function()
+    {  
+        // set meeting id
+        $scope.new_goal.meeting_id = $routeParams.id;
+        $scope.new_goal.$create(function()
+        {
+            // get updated goals query
+            $scope.Meeting.meeting_goals_array = Goals.query();
+        }); 
     }
 })

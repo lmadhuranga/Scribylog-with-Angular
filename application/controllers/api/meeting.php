@@ -35,6 +35,7 @@ class Meeting extends REST_Controller
     //#return type :
 	function index_get()
 	{   
+        $this->load->model('meeting_goals_model');
         $this->load->model('meeting_tag_model');
         $this->load->model('tags_model');
         // return araray ini
@@ -60,7 +61,11 @@ class Meeting extends REST_Controller
                        $meeting->tags_array[$meeting_tag_id['tag_id']] =  $this->tags_model->get('tag,id',$meeting_tag_id['tag_id']);
 
                     }
+
                 } 
+
+                // get goal list
+                $meeting->meeting_goals_array  = $this->meeting_goals_model->get_by(array('meeting_id'=>$id,'enable'=>'1'));
 
                 // send data to front end
                 $json_return_array = ($meeting);

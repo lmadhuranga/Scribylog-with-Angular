@@ -24,7 +24,10 @@
                         </header>
                         <div class="">
                             <ol id="goalsList">
-                                <li><input type="text" id="getGoals" class="inputboxline" /></li>
+                                <li class="goal"  ng-repeat="goal in Meeting.meeting_goals_array" ng-click="deleteGoal(goal,$index)">
+                                    {{goal.goal}} 
+                                </li>
+                                <li><input type="text" ng-blur="addGoal()"  ng-model="new_goal.goal" id="getGoals" class="inputboxline" /></li>
                             </ol>
                         </div>
                     </article>
