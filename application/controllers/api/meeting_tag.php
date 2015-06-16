@@ -35,6 +35,7 @@ class Meeting_tag extends REST_Controller
     //#return type :
 	function index_get()
 	{   
+        $this->load->model('tags_model');
         // return araray ini
         $json_return_array = array();
 
@@ -44,11 +45,6 @@ class Meeting_tag extends REST_Controller
         {
             $meeting_tag = $this->meeting_tag_model->get_by(array('id'=>$id),'*');
             if (sizeof($meeting_tag)>0)
-            {
-                $json_return_array['data']      = end($meeting_tag);
-                $json_return_array['status']    = 'success';
-            }
-            else
             {
                 // get all record
                 $meeting_tags_list = $this->meeting_tag_model->get_by(array('enable'=>'1'),'id,meeting_id,tag_id,enable');   
@@ -61,13 +57,34 @@ class Meeting_tag extends REST_Controller
                     // no data 
                     $json_return_array['msg'] = 'No Data';
                     $json_return_array['status'] = 'no_data';
-                }
+                } 
+            }
+            else
+            {
+                 // no data 
+                $json_return_array['msg'] = 'No Data';
+                $json_return_array['status'] = 'no_data';
             }
         }
         else
         {
             // send all record
-            $json_return_array = $this->meeting_tag_model->get_by(array(),'id,meeting_id,tag_id,enable');   
+            // get all record
+                $meeting_tags_list = $this->meeting_tag_model->get_by(array('enable'=>'1'),'id,meeting_id,tag_id,enable');   
+                if (sizeof($meeting_tags_list)>0)
+                {
+                    foreach ($meeting_tags_list as $key => $meeting_tags_id) { 
+                        $tag = $this->tags_model->get('*',$meeting_tags_id['tag_id'],true); 
+                        $meeting_tags_list[$key]['tag'] = $tag->tag; 
+                    }
+                    $json_return_array= $meeting_tags_list;
+                }
+                else
+                {
+                    // no data 
+                    $json_return_array['msg'] = 'No Data';
+                    $json_return_array['status'] = 'no_data';
+                }    
         } 
 
         // response

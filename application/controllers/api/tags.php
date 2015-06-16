@@ -53,7 +53,7 @@ class Tags extends REST_Controller
                 $tags_list = $this->tags_model->get_by(array('enable'=>'1'),'id,tag,enable');   
                 if (sizeof($tags_list)>0)
                 {
-                    $json_return_array['data'] = $tags_list;
+                    $json_return_array= $tags_list;
                     $json_return_array['status'] = 'success';
                 }
                 else
