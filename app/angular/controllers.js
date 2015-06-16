@@ -109,8 +109,8 @@ controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,Tag,Tags
         $scope.new_tag.meeting_id = $routeParams.id;  
         $scope.new_tag.$create(function()
         {
-            //::TODO load the tag list
-            console.log('TODO load the tag list');
+            //::TODO load the tag list 
+            $scope.Meeting.tags_array = Tags.query();
              
         }); 
     }
@@ -121,6 +121,11 @@ controller('MeetingUpdateController',function($scope,Meeting,Goal,Goals,Tag,Tags
         Tag_t.$delete(function(){
             $scope.Meeting.tags_array = Tags.query();
         });
+    }
+
+    $scope.getExisting_tag = function(){  
+        // send ajax request to add the Meeting
+        
     }
 
 

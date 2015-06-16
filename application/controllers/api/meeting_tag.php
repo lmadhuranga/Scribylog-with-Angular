@@ -126,23 +126,24 @@ class Meeting_tag extends REST_Controller
     //  @ type :
     //  #return type :
     public function index_post()
-    { 
-        
+    {  
         $this->load->model('tags_model');
         // return araray ini
         $json_return_array = array();
         // load helpers 
-        $this->load->library('form_validation'); 
+        $this->load->library('form_validation');  
         // set validation
         $this->form_validation->set_rules( array(
-                                                'field'=>'meeting_id',
-                                                'label'=>'Meeting',
-                                                'rules'=>'required|trim|integer|xss_clean|max_length[11]'
-                                            ),
-                                            array(
-                                                'field'=>'tag',
-                                                'label'=>'New Tag',
-                                                'rules'=>'trim|xss_clean|max_length[1]'
+                                                array(
+                                                    'field'=>'meeting_id',
+                                                    'label'=>'Meeting',
+                                                    'rules'=>'trim|integer|xss_clean|max_length[11]'
+                                                ),
+                                                array(
+                                                    'field'=>'tag',
+                                                    'label'=>'New Tag',
+                                                    'rules'=>'trim|xss_clean|max_length[45]'
+                                                )
                                             )
                                         );
 
@@ -156,7 +157,8 @@ class Meeting_tag extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id','meeting_id','tag')); 
+            $form_data = $this->post_get_as_array(array('meeting_id','tag')); 
+            // var_dump($form_data[] ); exit('meeting_tag_file ln:'.__LINE__);
             if($form_data['tag']!=false)
             {
                 // save new tag nage

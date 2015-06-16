@@ -64,7 +64,7 @@
                                 <li class="tag"  ng-repeat="tag in Meeting.tags_array">
                                     <a href="#tag/view/{{tag.id}}">{{tag.tag}}</a>
                                 </li>
-                                <li style="display: block" ><input type="text" id="getTags" ng-blur="addTag()"  ng-model="new_tag.tag" placeholder="tags help you to find later" class="inputboxline text-center" /></li>
+                                <li style="display: block" ><input type="text" id="getTags" ng-blur="addTag()" ng-change="getExisting_tag()"  ng-model="new_tag.tag" placeholder="tags help you to find later" class="inputboxline text-center" /></li>
                             </ul>
                         </div>
                     </article>
