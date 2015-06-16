@@ -39,9 +39,7 @@ MeetingApp = angular.module('MeetingApp', [
  
  MeetingApp.config(['$routeProvider',
 				  	function($routeProvider)
-				  	{ 
-				  		
-				  		console.log('anonymouse funciton');
+				  	{  
 				    	$routeProvider.when('/meeting/', 
 										{
 											templateUrl: 'views/meeting/_list.html',
@@ -49,8 +47,8 @@ MeetingApp = angular.module('MeetingApp', [
 										}).
 				    					when('/meeting/add', 
 										{
-											templateUrl: 'views/meeting/_add.html',
-											controller: 'MeetingAddController'
+											controller: 'MeetingAddController',
+											templateUrl: 'views/meeting/_add.html'
 										}).
 										when('/meeting/view/:id', 
 										{

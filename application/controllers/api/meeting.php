@@ -143,8 +143,8 @@ class Meeting extends REST_Controller
         }
         else
         {
-            $form_data = $this->post_get_as_array(array('id,title,sub_title,note,date,end_time,conducted_by,held_status,enable')); 
-    
+            $form_data = $this->post_get_as_array(array('id','title','sub_title','note','date','end_time','conducted_by','held_status','enable')); 
+            // var_dump($form_data); exit('meeting_file ln:'.__LINE__);
             if ($this->meeting_model->save($form_data,$form_data['id'])) {
     
                 $json_return_array['msg']       = 'System update success';
