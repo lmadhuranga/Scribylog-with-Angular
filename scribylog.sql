@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 16, 2015 at 11:07 AM
+-- Generation Time: Jun 16, 2015 at 01:03 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.27
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting` (
 --
 
 INSERT INTO `tbl_meeting` (`id`, `title`, `sub_title`, `note`, `date`, `end_time`, `conducted_by`, `held_status`, `enable`, `created`, `modified`) VALUES
-(1, 'Meeting 1ssss', 'meeting 1ss', 'Testssss', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, '2015-06-16 10:18:46'),
+(1, 'Meeting 1ssss', 'meeting 1ss', 'Testssss', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, '2015-06-16 12:48:47'),
 (2, 'Meeting2', 'Meeting2_subtitle', 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:24', '2015-06-09 20:22:24'),
 (3, 'Meeting3', 'Meeting3_subtitle', 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:36', '2015-06-09 20:22:36');
 
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_goals` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `tbl_meeting_goals`
@@ -115,9 +115,10 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_goals` (
 
 INSERT INTO `tbl_meeting_goals` (`id`, `goal`, `by`, `meeting_id`, `enable`, `created`, `modified`) VALUES
 (7, 'ss', 1, 1, '1', '2015-06-16 11:00:05', '2015-06-16 11:00:05'),
-(9, 'tset', 1, 1, '1', '2015-06-16 11:00:47', '2015-06-16 11:00:47'),
-(11, 'test', 1, 1, '1', '2015-06-16 11:04:48', '2015-06-16 11:04:48'),
-(12, 'tttss', 1, 1, '1', '2015-06-16 11:04:59', '2015-06-16 11:04:59');
+(22, 'ss', 1, 1, '1', '2015-06-16 11:08:21', '2015-06-16 11:08:21'),
+(23, 'ss', 1, 1, '1', '2015-06-16 11:08:23', '2015-06-16 11:08:23'),
+(24, 'ddd', 1, 1, '1', '2015-06-16 12:47:20', '2015-06-16 12:47:20'),
+(25, 'eee', 1, 1, '1', '2015-06-16 12:48:04', '2015-06-16 12:48:04');
 
 -- --------------------------------------------------------
 
@@ -159,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_tag` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tbl_meeting_tag`
@@ -167,7 +168,14 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_tag` (
 
 INSERT INTO `tbl_meeting_tag` (`id`, `meeting_id`, `tag_id`, `enable`, `created`, `modified`) VALUES
 (1, 1, 1, '1', NULL, NULL),
-(2, 1, 2, '1', NULL, NULL);
+(2, 1, 2, '1', NULL, NULL),
+(3, 1, 3, '1', '2015-06-16 12:50:57', '2015-06-16 12:50:57'),
+(4, 1, 4, '1', '2015-06-16 12:54:00', '2015-06-16 12:54:00'),
+(5, 1, 5, '1', '2015-06-16 12:54:48', '2015-06-16 12:54:48'),
+(6, 1, 6, '1', '2015-06-16 12:54:51', '2015-06-16 12:54:51'),
+(7, 1, 7, '1', '2015-06-16 12:54:55', '2015-06-16 12:54:55'),
+(8, 1, 8, '1', '2015-06-16 12:56:49', '2015-06-16 12:56:49'),
+(9, 1, 9, '1', '2015-06-16 12:57:36', '2015-06-16 12:57:36');
 
 -- --------------------------------------------------------
 
@@ -208,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `tbl_tags` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tbl_tags`
@@ -216,7 +224,14 @@ CREATE TABLE IF NOT EXISTS `tbl_tags` (
 
 INSERT INTO `tbl_tags` (`id`, `tag`, `enable`, `created`, `modified`) VALUES
 (1, 'tag1', '1', NULL, NULL),
-(2, 'tag2', '1', NULL, NULL);
+(2, 'tag2', '1', NULL, NULL),
+(3, 'mm', '1', '2015-06-16 12:50:57', '2015-06-16 12:50:57'),
+(4, 'ss', '1', '2015-06-16 12:54:00', '2015-06-16 12:54:00'),
+(5, 'sss', '1', '2015-06-16 12:54:48', '2015-06-16 12:54:48'),
+(6, 'ss', '1', '2015-06-16 12:54:51', '2015-06-16 12:54:51'),
+(7, 'ss', '1', '2015-06-16 12:54:55', '2015-06-16 12:54:55'),
+(8, 'hh', '1', '2015-06-16 12:56:49', '2015-06-16 12:56:49'),
+(9, 'test', '1', '2015-06-16 12:57:36', '2015-06-16 12:57:36');
 
 -- --------------------------------------------------------
 
