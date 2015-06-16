@@ -74,6 +74,7 @@ controller('MeetingUpdateController',function($scope,Meeting,$routeParams){
         console.log($scope.Meeting);
         // send ajax request to add the Meeting
         $scope.Meeting.$update(function(){
+        $scope.Meeting = Meeting.get({id:$routeParams.id});  
             // list updated Meeting list
             // redirectTo('/Meeting/view/'+$scope.Meeting.id)
         });

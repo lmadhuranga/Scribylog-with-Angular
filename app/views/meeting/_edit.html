@@ -5,11 +5,11 @@
                 <article class="main-section">
                     <div class="minutes-WD">
                         <header class="title clearfix">
-                            <h2><input type="text" ng-change="updateMeeting()" ng-model="Meeting.title"></h2>
-                            <div class="action text-right"><input type="text" ng-model="Meeting.sub_title"></div>
+                            <h2><input type="text" ng-blur="updateMeeting()" ng-model="Meeting.title"></h2>
+                            <div class="action text-right"><input type="text" ng-blur="updateMeeting()" ng-model="Meeting.sub_title"></div>
                         </header>
                         <div class="today-minuts">
-                            <textarea id="getTodayMinuts"  ng-model="Meeting.note" ></textarea>
+                            <textarea id="getTodayMinuts" ng-blur="updateMeeting()" ng-model="Meeting.note" ></textarea>
                         </div>
                     </div>
                 </article>
