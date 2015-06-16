@@ -1,19 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 14, 2015 at 01:46 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: Jun 16, 2015 at 11:07 AM
+-- Server version: 5.5.36
+-- PHP Version: 5.4.27
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 --
 -- Database: `scribylog`
@@ -67,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting` (
 --
 
 INSERT INTO `tbl_meeting` (`id`, `title`, `sub_title`, `note`, `date`, `end_time`, `conducted_by`, `held_status`, `enable`, `created`, `modified`) VALUES
-(1, 'Meeting1', 'Meeting1_subtitle', 'none', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, NULL),
+(1, 'Meeting 1ssss', 'meeting 1ss', 'Testssss', '2015-06-09 08:00:00', '2015-06-09 09:00:00', 1, 3, '1', NULL, '2015-06-16 10:18:46'),
 (2, 'Meeting2', 'Meeting2_subtitle', 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:24', '2015-06-09 20:22:24'),
 (3, 'Meeting3', 'Meeting3_subtitle', 'none', '2015-06-09 00:00:00', NULL, 2, 1, '1', '2015-06-09 20:22:36', '2015-06-09 20:22:36');
 
@@ -112,14 +107,17 @@ CREATE TABLE IF NOT EXISTS `tbl_meeting_goals` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `tbl_meeting_goals`
 --
 
 INSERT INTO `tbl_meeting_goals` (`id`, `goal`, `by`, `meeting_id`, `enable`, `created`, `modified`) VALUES
-(1, 'goal1', 0, 0, '1', NULL, NULL);
+(7, 'ss', 1, 1, '1', '2015-06-16 11:00:05', '2015-06-16 11:00:05'),
+(9, 'tset', 1, 1, '1', '2015-06-16 11:00:47', '2015-06-16 11:00:47'),
+(11, 'test', 1, 1, '1', '2015-06-16 11:04:48', '2015-06-16 11:04:48'),
+(12, 'tttss', 1, 1, '1', '2015-06-16 11:04:59', '2015-06-16 11:04:59');
 
 -- --------------------------------------------------------
 
